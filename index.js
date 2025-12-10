@@ -7,8 +7,9 @@ import dotenv from 'dotenv';
 dotenv.config();
 
 const app = express();
-const PORT = process.env.PORT || 3000;
-const HOST = '0.0.0.0';  // ¡IMPORTANTE PARA RAILWAY!
+const server = app.listen(0, () => {
+  console.log(`Server running on port ${server.address().port}`);
+});
 
 app.listen(PORT, HOST, () => {
   console.log(`=========================================`);
